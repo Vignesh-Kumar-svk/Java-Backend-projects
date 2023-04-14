@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Train Schedules Dashboard</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 20px;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.card {
+			background-color: #f1f1f1;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			margin: 10px;
+			padding: 20px;
+			width: 700px;
+			text-align: center;
+		}
+		.card h2 {
+			font-size: 24px;
+			margin: 10px;
+		}
+		.card p {
+			font-size: 18px;
+			margin: 10px;
+		}
+		.card button {
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			cursor: pointer;
+			font-size: 18px;
+			margin: 10px;
+			padding: 10px;
+			width: 80%;
+		}
+		.card button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<a th:text="${bookings.fromplace}"></a>
+			<a th:text="${bookings.toplace}"></a>
+			<p>Departure: 10:00 AM</p>
+			<p>Arrival: 12:00 PM</p>
+			<button>Book</button>
+		</div>
+		<div class="card">
+			<h2></h2>
+			<p>Departure: 12:00 PM</p>
+			<p>Arrival: 2:00 PM</p>
+			<button >Book</button>
+		</div>
+		<div class="card">
+			<h2>Train 3</h2>
+			<p>Departure: 2:00 PM</p>
+			<p>Arrival: 4:00 PM</p>
+			<button >Book</button>
+		</div>
+		<div class="card">
+			<h2>Train 4</h2>
+			<p>Departure: 4:00 PM</p>
+			<p>Arrival: 6:00 PM</p>
+			<button >Book</button>
+		</div>
+	</div>
+</body>
+</html>
