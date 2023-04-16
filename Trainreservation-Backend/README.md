@@ -2,7 +2,7 @@
 
 My first simple project in java using Springboot, Html, Css.
 
-A simple and user-friendly homepage for train ticket reservation system with login, registration, booking tickets.
+A simple and user-friendly homepage for train ticket reservation system with login, registration, booking tickets, etc...
 
 In future i will add some more options with this....
 
