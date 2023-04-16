@@ -1,4 +1,4 @@
-#Trainreservation-Backend web application
+#Trainticketreservation-Backend web application
 
 My first simple project in java using Springboot, Html, Css.
 
