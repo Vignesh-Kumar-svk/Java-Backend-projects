@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>Train Ticket Reservation</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="tcktbooking.css">
+		
+	
+</head>
+<body >
+
+	<header>
+		<div class="logo">
+			<img src="/img/train.png" alt="Train Ticket Reservation System">
+		</div>
+		<nav>
+			<ul>
+				<li><a th:href="@{/home}">Home</a></li>
+				<li><a th:href="@{booking}">Book Tickets</a></li>
+				<li><a href="#">Train Schedules</a></li>
+				<li><a href="#">Customer Support</a></li>
+			
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+		<h1>Train Ticket Reservation</h1>
+		
+		<form th:action="@{/booking}" method="post" th:object="${bookings}" >
+			<div class="form-group">
+				<label for="from">From</label>
+				<select id="from" name="from" th:field="*{fromplace}">
+				    <option value="none" selected disabled hidden>Select</option>
+			        <option value="Chennai">Chennai</option>
+			        <option value="Nellore">Nellore</option>
+			        <option value="Kerala">Kerala</option>
+			        <option value="Maharastra">Maharastra</option>
+			        <option value="Bihar">Bihar</option>
+			        <option value="Delhi">Delhi</option>
+			        <option value="Gujarat">Gujarat</option>
+			    </select>
+			</div>
+			<div class="form-group">
+				<label for="to">To</label>
+				<select id="from" name="from" th:field="*{toplace}">
+				    <option value="Nellore">Nellore</option>
+			        <option value="Chennai">Chennai</option>
+			        <option value="Kerala">Kerala</option>
+			        <option value="Maharastra">Maharastra</option>
+			        <option value="Bihar">Bihar</option>
+			        <option value="Delhi">Delhi</option>
+			        <option value="Gujarat">Gujarat</option>
+			    </select>
+			</div>
+			<div class="form-group">
+				<label for="date">Date</label>
+				<input type="date" id="date" name="date" required th:field=*{sdate}>
+			</div>
+			<div class="form-group">
+			    <label for="passenger-count">Number of Passengers:</label>
+			    <select id="passenger-count" name="passenger-count" th:field="*{passengercount}" onchange="generatePassengerDetailsForm()">
+			        <option value="1">1</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			    </select>
+			    <h3>Passenger 1</h3>
+			      <label for="passenger1">Name:</label>
+			      <input type="text" id="name1" name="passenger1" required />
+			      <label for="age1">Age:</label>
+			      <input type="number" id="age1" name="age1" required/>
+			      <label for="gender1">Gender:</label>
+			      <select id="gender1" name="gender1" required/>
+			        <option value="">Select gender</option>
+			        <option value="Male">Male</option>
+			        <option value="Female">Female</option>
+			        <option value="Other">Other</option>
+			      </select>
+			
+			    <div id="passenger-details-form"></div>
+			<div class="btn">
+			
+			    <button type="submit">Search trains</button>
+			</div>
+		 </div>
+	   </form>
+</div>
+
+		<script>
+			function generatePassengerDetailsForm() {
+				
+			    var passengerCount = document.getElementById("passenger-count").value;
+			    var passengerDetailsForm = document.getElementById("passenger-details-form");
+			    passengerDetailsForm.innerHTML = " ";
+			  for (let i = 2; i <= passengerCount; i++) {
+			    const div = document.createElement("div");
+			    div.innerHTML = `
+			      <h3>Passenger ${i}</h3>
+			      <label for="passenger${i}">Name:</label>
+			      <input type="text" id="name${i}" name="passenger${i}" required"/>
+			      <label for="age${i}">Age:</label>
+			      <input type="number" id="age${i}" name="age${i}" required/>
+			      <label for="gender${i}">Gender:</label>
+			      <select id="gender${i}" name="gender${i}" required/>
+			        <option value="">Select gender</option>
+			        <option value="Male">Male</option>
+			        <option value="Female">Female</option>
+			        <option value="Other">Other</option>
+			      </select>
+			      `;
+		
+			    passengerDetailsForm.appendChild(div);
+			  }
+			 
+			}
+			
+
+			
+			
+
+		</script>
+		
+    </body>
+</html>
+
+
+
+
+
+

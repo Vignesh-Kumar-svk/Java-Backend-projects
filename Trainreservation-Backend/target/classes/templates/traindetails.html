@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Train Schedules Dashboard</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 20px;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.card {
+			
+			background-color: #f1f1f1;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			margin: 10px;
+			padding: 20px;
+			width: 700px;
+			text-align: center;
+		}
+		.card a{
+			font-size:20px;
+			font-weight:bold;
+		}
+		.card h2 {
+			font-size: 24px;
+			margin: 10px;
+		}
+		.card p {
+			font-size: 18px;
+			margin: 10px;
+		}
+		.card input[type=button]{
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 5px;
+			color:white;
+			cursor: pointer;
+			font-size: 18px;
+			margin: 10px;
+			padding: 10px;
+			width: 80%;
+		}
+		.card button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<a>12852 - MAS BSP EXPRESS - </a>
+			<a th:text="${bookings.fromplace}"></a>
+			<a>to</a>
+			<a th:text="${bookings.toplace}"></a>
+			
+			<p>Departure: 10:00 AM</p>
+			<p>Arrival: 12:00 PM</p>
+			<a id="booking" th:href="bookingsuccessful">
+				<input type="button" value="Book">
+			</a>
+		</div>
+		<div class="card">
+			<a>12656 - NAVAJIVAN EXP - </a>
+			<a th:text="${bookings.fromplace}"></a>
+			<a>to</a>
+			<a th:text="${bookings.toplace}"></a>
+			<p>Departure: 12:00 PM</p>
+			<p>Arrival: 2:00 PM</p>
+			<a id="booking" th:href="bookingsuccessful">
+				<input type="button" value="Book">
+			</a>
+		</div>
+		<div class="card">
+			<a>12077 - BZA JANSHATABDI - </a>
+			<a th:text="${bookings.fromplace}"></a>
+			<a>to</a>
+			<a th:text="${bookings.toplace}"></a>
+			<p>Departure: 2:00 PM</p>
+			<p>Arrival: 4:00 PM</p>
+			<a id="booking" th:href="bookingsuccessful">
+				<input type="button" value="Book">
+			</a>
+		</div>
+		<div class="card">
+			<a>12295 - SANGHAMITRA EXP - </a>
+			<a th:text="${bookings.fromplace}"></a>
+			<a>to</a>
+			<a th:text="${bookings.toplace}"></a>
+			<p>Departure: 4:00 PM</p>
+			<p>Arrival: 6:00 PM</p>
+			<a id="booking" th:href="bookingsuccessful">
+				<input type="button" value="Book">
+			</a>
+		</div>
+	</div>
+</body>
+</html>

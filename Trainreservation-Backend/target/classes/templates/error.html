@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Unauthorized Access</title>
+	<link rel="stylesheet" type="text/css" href="error.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Unauthorized Access</h1>
+		<p>You do not have permission to access this page.</p>
+		<p>Check your Login id and password once....</p>
+		<a th:href="@{/userLogin}">Return to login</a>
+	</div>
+
+	<div class="cloud"></div>
+	<div class="cloud"></div>
+	<div class="cloud"></div>
+
+	<script >
+		var container = document.querySelector('.container');
+		var clouds = document.querySelectorAll('.cloud');
+	
+		function animateClouds() {
+			Array.prototype.forEach.call(clouds, function(cloud) {
+				cloud.style.animationPlayState = 'running';
+			});
+		}
+	
+		container.addEventListener('mouseover', animateClouds);
+
+	</script>
+</body>
+</html>
